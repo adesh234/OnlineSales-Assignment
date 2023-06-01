@@ -1,0 +1,24 @@
+Task 1:
+
+Solution -
+Select d.NAME as "DEPT_NAME", avg(s.AMT) as "AVG_MONTHLY_SALARY (USD)" from Salaries as s
+join Employees as e  On e.id=s.EMP_ID
+Join Departments as d  On d.ID=e.DEPT_ID
+Group by d.Name
+order by avg(s.AMT) desc limit 3 ;
+
+Task 3:
+
+    def compute(n):
+        if n < 10:
+            out = n ** 2
+        elif n < 20:
+            out = 1
+            for i in range(1, n-9): // Here the range will be n-9 for correct factorial
+                out *= i
+        else:
+            lim = n - 19
+            out = lim * lim
+            out = out + lim // Here we will add out and lim and then divide by 2 for sum of int from 1 to n-20
+            out = out / 2
+        print(out)
